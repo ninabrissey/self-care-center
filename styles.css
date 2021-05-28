@@ -1,24 +1,75 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000; */
 
 * {
-  border: 3px solid purple;
-  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
+html {
+  font-family: 'Quicksand', sans-serif;
+  color: #ffffff;
+}
+
 body {
+  height: 97.5vh;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  }
+
+h2 {
+  margin: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 44%;
+  margin-bottom: 13%;
 }
 
 .saying-buttons {
+  color: #000000;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 67%;
+  height: 28%;
+  border-radius: 5px;
+}
+
+.radio-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-style: italic;
+}
+
+.receive-message {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  background-color: #134d71;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 33.7%;
+  height: 33%;
+
+}
+
+.meditation-bell {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 45.5%;
+  border-radius: 5px;
+}
+
+img {
+  height: 49%;
 }
