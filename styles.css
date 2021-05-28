@@ -1,24 +1,74 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000; */
 
 * {
-  border: 3px solid purple;
-  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
+html {
+  font-family: 'Quicksand', sans-serif;
+  color: #ffffff;
+}
+
 body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  }
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 44%;
+  border: solid black 1px;
+  margin-bottom: 15%;
 }
 
 .saying-buttons {
+  color: #000000;
+  background-color: #ffffff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 41%;
+  height: 14%;
+  /* align-items: space-around; */
+}
+
+
+.affirmation-button {
+
+}
+
+.mantra-button {
+
+}
+
+.receive-message {
+  background-color: #134d71;
+  color: #ffffff;
+
+}
+
+.meditation-bell {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 20%;
+}
+
+img {
+
 }
