@@ -12,6 +12,11 @@ var motivationalMessage = document.querySelector('#motivational-message-display'
 buttonReceiveMessage.addEventListener('click', receiveMessage);
 
 // If you're using another button to activate it, it's even simpler: just include onclick="theid.checked=true" in the input tag of the activating button.
+
+
+
+// functions and event handlers 👇
+
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
@@ -21,6 +26,8 @@ function hideMeditationBell() {
   motivationalMessageBell.classList.add('hidden');
 }
 
+buttonReceiveMessage.addEventListener('click', receiveMessage);
+// for function below, I would like to make it dynamic, but I done understand how to the computer would know which arguments to pass in. I think we could remove two lines of code if this were the case. 👇
 function receiveMessage() {
   if (selectMantra.checked) {
     motivationalMessage.innerHTML = mantras[getRandomIndex(mantras)];
@@ -33,11 +40,7 @@ function receiveMessage() {
   hideMeditationBell();
 }
 
-
-// functions and event handlers 👇
-
-
-//I think I need to turn radio button into true/false
+//I think I need to turn radio button into true/false 👆
 
 // user selects mantra or affirmation
 // user presses receive motivationalMessage
@@ -51,16 +54,29 @@ function receiveMessage() {
 // return a message for them to select either mantra or affirmation
 
 
+// - [ ]  User should not be able to click the “Receive Message” button unless they have selected a message option.
+
+// hide receive button and reveal it when the user selects affirmation or mantra
+
+selectAffirmation.addEventListener('change', revealReceiveMessageButton);
+
+function revealReceiveMessageButton() {
+  if (selectMantra.checked || selectAffirmation.checked) {
+    buttonReceiveMessage.classList.remove('hidden');
+  }
+}
 
 
 
 
 
+// - [ ]  The user can click a clear button, which clears the page of any message.
+// - [ ]  User should only be able to click the clear button if a message is visible.
+// - [ ]  When the clear button is clicked and the message is removed, the image of the meditation icon should re-appear.
+// - [ ]  If you’ve added other buttons or inputs, be sure to add some error handling for them as well.
 
+// *Note: You can disable these buttons, hide them, or display a message to the user for error handling. The choice is yours!*
 
-//
-// - [ ]  When a user selects a message option and then clicks the “Receive Message” button, the user sees a random message from the list of possible messages for that category
-// - [ ]  When the message appears, the mediation icon disappears from the message area
 
 var currentMessage = 'Please select mantra or affirmation to receive a message';
 
