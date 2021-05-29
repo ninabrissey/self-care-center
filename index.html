@@ -11,18 +11,21 @@
       <section class="saying-buttons">
         <div class="radio-container">
           <label>
-          <input class="affirmation-button" type="radio" />
+          <input class="affirmation" id="affirmation-button" type="radio" name='radio-button' />
             affirmation
           </label>
           <label>
-          <input class="mantra-button" type="radio" />
+          <input class="mantra" id="mantra-button" type="radio" name='radio-button' />
             mantra
           </label>
         </div>
-        <button class="receive-message">Receive Message</button>
+        <button class="receive-message" id="receive-message-button">Receive Message</button>
       </section>
-      <section class='meditation-bell'>
-        <img src="assets/meditate.svg" alt="Meditation Bell" width="100">
+      <section class="meditation-bell" id="meditation-bell-icon">
+        <img src="assets/meditate.svg" alt="meditation bell" width="100">
+      </section>
+      <section class="motivational-message hidden" id="motivational-message-display">
+        <h2>Display motivational message here</h2>
       </section>
     </main>
     <script type="text/javascript" src="main.js"></script>
