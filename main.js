@@ -23,14 +23,14 @@ function getRandomIndex(array) {
 }
 
 function hideMeditationBell() {
-  motivationalMessage.classList.remove('hidden');
-  motivationalMessageBell.classList.add('hidden');
+  hide(motivationalMessageBell);
+  show(motivationalMessage);
 }
 
 // for function below, I would like to make it dynamic, but I done understand how to the computer would know which arguments to pass in. I think we could remove two lines of code if this were the case. 👇
 function receiveMessage() {
   if (selectMantra.checked) {
-    motivationalMessage.innerHTML = /*mantras[getRandomIndex(mantras)];*/ 'Andrew is AMAZING and HOT and looks so good. OMG! 🤪';
+    motivationalMessage.innerHTML = mantras[getRandomIndex(mantras)];
   } else if (selectAffirmation.checked) {
     motivationalMessage.innerHTML = affirmations[getRandomIndex(affirmations)];
   } else {
@@ -41,23 +41,31 @@ function receiveMessage() {
   revealSelectAnotherMessageButton();
 }
 
-function revealReceiveMessageButton(e) {
-  console.log(e);
+function revealReceiveMessageButton() {
   if (selectAffirmation.checked || selectMantra.checked) {
-    buttonReceiveMessage.classList.remove('hidden');
+    show(buttonReceiveMessage);
   }
 }
 
 function revealSelectAnotherMessageButton() {
-  buttonReceiveMessage.classList.add('hidden');
-  buttonSelectAnotherMessage.classList.remove('hidden');
+  hide(buttonReceiveMessage);
+  show(buttonSelectAnotherMessage);
 }
 
 function selectAnotherMessage() {
-  motivationalMessage.classList.add('hidden');
-  motivationalMessageBell.classList.remove('hidden');
-  buttonReceiveMessage.classList.remove('hidden');
-  buttonSelectAnotherMessage.classList.add('hidden');
+  hide(motivationalMessage);
+  hide(buttonSelectAnotherMessage);
+
+  show(motivationalMessageBell);
+  show(buttonReceiveMessage);
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
+function show(element) {
+  element.classList.remove('hidden');
 }
 
 
