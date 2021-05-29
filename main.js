@@ -4,33 +4,33 @@ var selectMantra = document.querySelector('#mantra-button');
 var selectAffirmation = document.querySelector('#affirmation-button');
 var motivationalMessageBell = document.querySelector('#meditation-bell-icon');
 var motivationalMessage = document.querySelector('#motivational-message-display');
+var buttonSelectAnotherMessage = document.querySelector('#select-another-message-button');
 
 
 
 // event-listeners 👇
-// buttonReceiveMessage.addEventListener('click', receiveMessage);
 buttonReceiveMessage.addEventListener('click', receiveMessage);
-
-// If you're using another button to activate it, it's even simpler: just include onclick="theid.checked=true" in the input tag of the activating button.
+buttonSelectAnotherMessage.addEventListener('click', selectAnotherMessage);
+selectAffirmation.addEventListener('change', revealReceiveMessageButton);
+selectMantra.addEventListener('change', revealReceiveMessageButton);
+buttonReceiveMessage.addEventListener('click', receiveMessage);
 
 
 
 // functions and event handlers 👇
-
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
-};
+}
 
 function hideMeditationBell() {
   motivationalMessage.classList.remove('hidden');
   motivationalMessageBell.classList.add('hidden');
 }
 
-buttonReceiveMessage.addEventListener('click', receiveMessage);
 // for function below, I would like to make it dynamic, but I done understand how to the computer would know which arguments to pass in. I think we could remove two lines of code if this were the case. 👇
 function receiveMessage() {
   if (selectMantra.checked) {
-    motivationalMessage.innerHTML = mantras[getRandomIndex(mantras)];
+    motivationalMessage.innerHTML = /*mantras[getRandomIndex(mantras)];*/ 'Andrew is AMAZING and HOT and looks so good. OMG! 🤪';
   } else if (selectAffirmation.checked) {
     motivationalMessage.innerHTML = affirmations[getRandomIndex(affirmations)];
   } else {
@@ -38,44 +38,28 @@ function receiveMessage() {
   }
   currentMessage = motivationalMessage.innerHTML;
   hideMeditationBell();
+  revealSelectAnotherMessageButton();
 }
 
-//I think I need to turn radio button into true/false 👆
-
-// user selects mantra or affirmation
-// user presses receive motivationalMessage
-// if
-// user selected affirmation for their message (true)
-// return a random message from the affirmation
-// else if
-// user selected mantra motivational messages (true)
-// return a random message from the affirmation
-// else
-// return a message for them to select either mantra or affirmation
-
-
-// - [ ]  User should not be able to click the “Receive Message” button unless they have selected a message option.
-
-// hide receive button and reveal it when the user selects affirmation or mantra
-
-selectAffirmation.addEventListener('change', revealReceiveMessageButton);
-
-function revealReceiveMessageButton() {
-  if (selectMantra.checked || selectAffirmation.checked) {
+function revealReceiveMessageButton(e) {
+  console.log(e);
+  if (selectAffirmation.checked || selectMantra.checked) {
     buttonReceiveMessage.classList.remove('hidden');
   }
 }
 
+function revealSelectAnotherMessageButton() {
+  buttonReceiveMessage.classList.add('hidden');
+  buttonSelectAnotherMessage.classList.remove('hidden');
+}
 
+function selectAnotherMessage() {
+  motivationalMessage.classList.add('hidden');
+  motivationalMessageBell.classList.remove('hidden');
+  buttonReceiveMessage.classList.remove('hidden');
+  buttonSelectAnotherMessage.classList.add('hidden');
+}
 
-
-
-// - [ ]  The user can click a clear button, which clears the page of any message.
-// - [ ]  User should only be able to click the clear button if a message is visible.
-// - [ ]  When the clear button is clicked and the message is removed, the image of the meditation icon should re-appear.
-// - [ ]  If you’ve added other buttons or inputs, be sure to add some error handling for them as well.
-
-// *Note: You can disable these buttons, hide them, or display a message to the user for error handling. The choice is yours!*
 
 
 var currentMessage = 'Please select mantra or affirmation to receive a message';
@@ -94,7 +78,7 @@ var affirmations = [
   'Every day I am getting healthier and stronger.',
   'I honor my body by trusting the signals that it sends me.',
   'I manifest perfect health by making smart choices.'
-];
+]
 
 var mantras = [
   'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
