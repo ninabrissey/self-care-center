@@ -60,6 +60,16 @@ main {
   height: 33%;
   }
 
+.select-another-message {
+  font-family: 'Quicksand', sans-serif;
+  font-size: .9em;
+  background-color: #134d71;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 33.7%;
+  height: 33%;
+  }
+
 .meditation-bell {
   display: flex;
   justify-content: center;
