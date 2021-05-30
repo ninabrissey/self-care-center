@@ -18,7 +18,12 @@ body {
   background-attachment: fixed;
   }
 
+h1 {
+  font-size: 1.75vw;
+}
+
 h2 {
+  font-size: 1.25vw;
   margin: 10px;
   }
 
@@ -40,7 +45,14 @@ main {
   width: 67%;
   height: 28%;
   border-radius: 5px;
+  /* font-size: 100%;
+  font-size-adjust: auto; */
   }
+
+/* .affirmation {
+  font-size: 100%;
+  font-size-adjust: auto;
+} */
 
 .radio-container {
   display: flex;
@@ -58,6 +70,7 @@ main {
   color: #ffffff;
   width: 33.7%;
   height: 33%;
+  font-size-adjust: auto;
   }
 
 .select-another-message {
@@ -97,4 +110,4 @@ main {
 
 img {
   height: 49%;
-  }
+}
