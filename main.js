@@ -2,8 +2,8 @@
 var buttonReceiveMessage = document.querySelector('#receive-message-button');
 var selectMantra = document.querySelector('#mantra-button');
 var selectAffirmation = document.querySelector('#affirmation-button');
-var motivationalMessageBell = document.querySelector('#meditation-bell-icon');
-var motivationalMessage = document.querySelector('#motivational-message-display');
+var bell = document.querySelector('#meditation-bell-icon');
+var message = document.querySelector('#motivational-message-display');
 var buttonSelectAnotherMessage = document.querySelector('#select-another-message-button');
 var radioButtons = document.querySelector('#radio-buttons');
 
@@ -24,13 +24,13 @@ function getRandomIndex(array) {
 
 function receiveMessage() {
   if (selectMantra.checked) {
-    motivationalMessage.innerHTML = mantras[getRandomIndex(mantras)];
+    message.innerHTML = mantras[getRandomIndex(mantras)];
   } else if (selectAffirmation.checked) {
-    motivationalMessage.innerHTML = affirmations[getRandomIndex(affirmations)];
+    message.innerHTML = affirmations[getRandomIndex(affirmations)];
   } else {
-    motivationalMessage.innerHTML = 'Please select a mantra or affirmation.';
+    message.innerHTML = 'Please select a mantra or affirmation.';
   }
-  currentMessage = motivationalMessage.innerHTML;
+  currentMessage = message.innerHTML;
   hideMeditationBell();
   revealSelectAnotherMessageButton();
 };
@@ -42,8 +42,8 @@ function revealReceiveMessageButton() {
 };
 
 function hideMeditationBell() {
-  hide(motivationalMessageBell);
-  show(motivationalMessage);
+  hide(bell);
+  show(message);
 };
 
 function revealSelectAnotherMessageButton() {
@@ -53,11 +53,11 @@ function revealSelectAnotherMessageButton() {
 };
 
 function selectAnotherMessage() {
-  hide(motivationalMessage);
+  hide(message);
   hide(buttonSelectAnotherMessage);
   show(radioButtons);
 
-  show(motivationalMessageBell);
+  show(bell);
   show(buttonReceiveMessage);
 };
 
