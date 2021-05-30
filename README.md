@@ -18,7 +18,7 @@ Head to the live page [here](https://ninabrissey.github.io/self-care-center/).
 
 You will have to option to select a *mantra* or an *affirmation*. When you check one of the two buttons, a *Receive Message* button will appear. To reveal your message, click the button. Your message will appear below. If you would like to select a new message, click the *Select Another Message* button. You will now be back to were you started. Please feel free to select as many mantras and affirmations as your heart desires. May your spirit be well today!
 
-# NEED TO PUT GIF HERE!
+![self care center](https://user-images.githubusercontent.com/80136642/120120599-0da07d00-c153-11eb-92db-f1ad3ef8e9e0.gif)
 
 ### Built With
 
