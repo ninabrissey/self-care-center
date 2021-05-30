@@ -8,17 +8,23 @@
 html {
   font-family: 'Quicksand', sans-serif;
   color: #ffffff;
+  font-size 16px;
   }
 
 body {
-  height: 97.5vh;
   display: flex;
   flex-direction: column;
+  height: 97.5vh;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   background-attachment: fixed;
   }
 
+h1 {
+  font-size: 1.75vw;
+}
+
 h2 {
+  font-size: 1.25vw;
   margin: 10px;
   }
 
@@ -32,11 +38,11 @@ main {
   }
 
 .saying-buttons {
-  color: #000000;
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  color: #000000;
+  background-color: #ffffff;
   width: 67%;
   height: 28%;
   border-radius: 5px;
@@ -48,26 +54,27 @@ main {
   justify-content: space-around;
   width: 100%;
   font-style: italic;
+  font-size: .65rem;
   }
 
 .receive-message {
   font-family: 'Quicksand', sans-serif;
-  font-size: 1em;
   background-color: #134d71;
   border-radius: 5px;
   color: #ffffff;
   width: 33.7%;
   height: 33%;
+  font-size: .6rem;
   }
 
 .select-another-message {
   font-family: 'Quicksand', sans-serif;
-  font-size: .9em;
   background-color: #134d71;
   border-radius: 5px;
   color: #ffffff;
   width: 33.7%;
   height: 33%;
+  font-size: .55rem;
   }
 
 .meditation-bell {
@@ -89,6 +96,7 @@ main {
   height: 45.5%;
   border-radius: 5px;
   color: #000000;
+  font-size: .75rem;
 }
 
 .hidden {
@@ -97,4 +105,4 @@ main {
 
 img {
   height: 49%;
-  }
+}
